@@ -8,20 +8,39 @@ const subtract = function(x, y) {
 	return res;
 };
 
-const sum = function(x, y, ...z) {
-	let res = 0;
-  for (num of arguments) {
-    res += num;
+//const sum = function(x, y, ...z) {
+//	let res = 0;
+//  for (num of arguments) {
+//    res += num;
+//  };
+//  return Number(res);
+//};
+
+//const multiply = function(x, y, ...z) {
+//	let res = 1;
+//  for (num of arguments) {
+//    res = res * num;
+//  };
+//  return Number(res);
+//};
+
+const sum = function(arr) {  //take into account that the test is calling 
+                             //1 argument, an array, there is no given
+                             //multiple arguments as tougth at the beginning
+  
+  let res = 0;
+  for (let i = 0; i < arr.length; i++) { //originally was used 'while'
+    res += arr[i];
   };
-  return Number(res);
+  return res;
 };
 
-const multiply = function(x, y, ...z) {
-	let res = 1;
-  for (num of arguments) {
-    res = res * num;
+const multiply = function(arr) {  //look the previous comment above
+  let res = 1;
+  for (let i = 0; i < arr.length; i++) {
+    res *= arr[i];
   };
-  return Number(res);
+  return res;
 };
 
 const power = function(x, y) {
@@ -43,10 +62,11 @@ const factorial = function(num) {
   } else if (num === 0) {
       return 1;
   } else {
-    for (let i = 0; i < num; i++) {
-      num *= i;
+    let res = num;
+    for (let i = 1; i < num; i++) {
+      res *= i;
     };
-  return num;
+  return res;
   };
 };
 
